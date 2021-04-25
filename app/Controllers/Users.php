@@ -36,18 +36,24 @@ class Users extends BaseController
 					$this->setUserSession($user);
 					//$session->setFlashdata('success', 'Successful Registration');
 					
-				
-					return redirect()->to('dashboard/');
+					
+
+					if($user['type'] == 'fournisseur'){
+						return redirect()->to('dashboard/');
+					}else return redirect()->to('dashboard/client');
+					
 
 				}
 			}
 	
 
 		helper(['form']);
-		echo view('templates/header', $data);
+		
 		echo view('login');
-		echo view('templates/footer');
+		
 	}
+
+
 
 	private function setUserSession($user){
 		$data = [
@@ -112,9 +118,9 @@ class Users extends BaseController
 
 
 
-		echo view('templates/header', $data);
+		
 		echo view('register');
-		echo view('templates/footer');
+		
 	}
 
 	
@@ -123,6 +129,7 @@ class Users extends BaseController
 		$session = session();
 		$session->destroy();
 
-		return view('login');
+		return redirect()->to('/');
 	}
+
 }

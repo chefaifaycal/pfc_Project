@@ -10,7 +10,7 @@
               <div class="form-group">
                <label for="type">Type</label>
                <select name="type" id="type">
-                    <option value="forunisseur">Fournisseur</option>
+                    <option value="fournisseur">Fournisseur</option>
                     <option value="client">Client</option>
                     
                 </select>
