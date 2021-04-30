@@ -49,7 +49,7 @@ class Users extends BaseController
 
 		helper(['form']);
 		
-		echo view('login');
+		return view('login');
 		
 	}
 
