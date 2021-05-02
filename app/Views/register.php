@@ -1,106 +1,56 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 mt-5 pt-3 pb-3 bg-white from-wrapper">
-      <div class="container">
-        <h3>Inscription</h3>
-        <hr>
-        <form class="" action="/register" method="post">
-          <div class="row">
-            <div class="col-12 ">
-              <div class="form-group">
-               <label for="type">Type</label>
-               <select name="type" id="type">
-                    <option value="fournisseur">Fournisseur</option>
-                    <option value="client">Client</option>
-                    
-                </select>
-              </div>
-            </div>
-            <div class="col-12 col-sm-6">
-              <div class="form-group">
-               <label for="nom">Nom</label>
-               <input type="text" class="form-control" name="nom" id="nom" value="<?= set_value('nom') ?>">
-              </div>
-            </div>
-            <div class="col-12 col-sm-6">
-              <div class="form-group">
-               <label for="prenom">Prénom</label>
-               <input type="text" class="form-control" name="prenom" id="prenom" value="<?= set_value('prenom') ?>">
-              </div>
-            </div>
-            <div class="col-12 col-sm-6">
-              <div class="form-group">
-               <label for="username">Nom d'utilisateur</label>
-               <input type="text" class="form-control" name="username" id="username" value="<?= set_value('username') ?>">
-              </div>
-            </div>
-            <div class="col-12 col-sm-6">
-              <div class="form-group">
-               <label for="email">Adresse email</label>
-               <input type="text" class="form-control" name="email" id="email" value="<?= set_value('email') ?>">
-              </div>
-            </div>
-            <div class="col-12 ">
-              <div class="form-group">
-               <label for="dateNaissance">Date de naissance</label>
-               <input type="date" class="form-control" name="dateNaissance" id="dateNaissance"   value="<?= set_value('dateNaissance') ?>">
-              </div>
-            </div>
-            <div class="col-12 col-sm-6">
-              <div class="form-group">
-               <label for="proNumb">Numéro Téléphone Personnel</label>
-               <input type="tel" class="form-control"  name="persoNumb" id="persoNumb" value="<?= set_value('persoNumb') ?>" >
-              </div>
-            </div>
-            <div class="col-12 col-sm-6">
-              <div class="form-group">
-               <label for="persoNumb">Numéro Téléphone Professionnel </label>
-               <input type="tel" class="form-control"  name="proNumb" id="proNumb" value="<?= set_value('proNum') ?>" >
-              </div>
-            </div>
-            <div class="col-12 ">
-              <div class="form-group">
-               <label for="dateMetier">Date début métier</label>
-               <input type="date" class="form-control" name="dateMetier" id="dateMetier"   value="<?= set_value('dateMetier') ?>">
-              </div>
-            </div>
-            <div class="col-12 col-sm-6">
-              <div class="form-group">
-               <label for="password">Mot de passe</label>
-               <input type="password" class="form-control" name="password" id="password" value="">
-             </div>
-           </div>
-           
-           <div class="col-12 col-sm-6">
-             <div class="form-group">
-              <label for="password_confirm">Confirmer le mot de passe</label>
-              <input type="password" class="form-control" name="password_confirm" id="password_confirm" value="">
-            </div>
-            
-          </div>
-          <?php if (isset($validation)): ?>
-            <div class="col-12">
-              <div class="alert alert-danger" role="alert">
-                <?= $validation->listErrors() ?>
-              </div>
-            </div>
-          <?php endif; ?>
-          </div>
-          
+<?= $this->extend('layouts/main') ?>
+<?= $this->section('content')?>
 
-          
+<div class="flex items-center justify-center bg-gray-50 md:bg-white">
+  <form action="/register" method="post" class="flex flex-col bg-gray-50  rounded-md  h-auto md:w-1/2  m-20 p-10 md:shadow-md">
+  
+    <select name="type" id="" class="m-2 p-2 rounded-md  border-2 border-blue-400 focus:border-blue-500 shadow-md  w-full">
+      <option value="client" >Client</option>
+      <option value="fournisseur">Fournisseur</option>
+      
+    </select>
 
-          <div class="row">
-            <div class="col-12 col-sm-4">
-              <button type="submit" class="btn btn-primary">Inscription</button>
-            </div>
-            <div class="col-12 col-sm-8 text-right">
-              <a href="/">J'ai déja un compte</a>
-            </div>
-
-          </div>
-        </form>
+    <input type="text" name="nom"  placeholder="Nom" class="form-control m-2 p-2 rounded-md  border-2 border-blue-400 focus:border-blue-500 shadow-md " value="<?= set_value('nom') ?>">
+      
+    <input name="prenom" type="text" placeholder="Prénom" class="form-control m-2 p-2 rounded-md rounded border-2 border-blue-400 focus:border-blue-500 shadow-md" value="<?= set_value('prenom') ?>">
+      <input name="username" type="text" placeholder="Nom d'utilisateur" class="form-control m-2 p-2 rounded-md rounded border-2 border-blue-400 focus:border-blue-500 shadow-md" value="<?= set_value('username') ?>">
+      
+      <input name="email" type="email" placeholder="Adresse Email" class="form-control m-2 p-2 rounded-md rounded border-2 border-blue-400 focus:border-blue-500 shadow-md" value="<?= set_value('email') ?>">
+      
+      <div>
+        <label for="dateNaissance">Date de naissance</label>
+      <input type="date" name="dateNaissance"   class="form-control m-2 p-2 rounded-md rounded border-2 border-blue-400 focus:border-blue-500 shadow-md" value="<?= set_value('dateNaissance') ?>">
       </div>
-    </div>
-  </div>
+      
+      <input type="phone" name="persoNumb" placeholder="Numero de telephone personnel"  class="form-control m-2 p-2 rounded-md rounded border-2 border-blue-400 focus:border-blue-500 shadow-md" value="<?= set_value('persoNumb') ?>">
+      
+      <input type="phone" name="proNumb" placeholder="Numero de telephone professionel"  class="form-control m-2 p-2 rounded-md rounded border-2 border-blue-400 focus:border-blue-500 shadow-md" value="<?= set_value('proNumb') ?>">
+      
+      <div>
+        <label for="dateMetier">Date début métier</label>
+      <input type="date" name="dateMetier"   class="form-control m-2 p-2 rounded-md rounded border-2 border-blue-400 focus:border-blue-500 shadow-md" value="<?= set_value('dateMetier') ?>" >
+      </div>
+      
+      <input name="password" type="password" placeholder="Mot de passe" class="form-control m-2 p-2 rounded-md rounded border-2 border-blue-400 focus:border-blue-500 shadow-md">
+      
+      <input name="password_confirm" type="password" placeholder="Confirmez votre mot de passe" class="form-control m-2 p-2 rounded-md rounded border-2 border-blue-400 focus:border-blue-500 shadow-md">
+
+  
+    
+      
+      
+      
+    
+    
+    <button type="submit" class="bg-blue-500 rounded py-2 px-4 text-white shadow-sm my-4 mr-28 hover:bg-blue-400">Inscription</button>
+    <p class="text-gray-900 text-md">Vous avez déja un compte? <a href="/" class="text-blue-400 font-semibold">Connectez-vous</a></p>
+      
+  
+  
+</form>
+
 </div>
+  
+
+
+<?= $this->endSection() ?>

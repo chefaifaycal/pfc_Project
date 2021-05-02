@@ -37,7 +37,8 @@ $routes->match(['get','post'],'register', 'Users::register',['filter' => 'noauth
 //$routes->get('/users/profile/', 'Users::profile');
 $routes->get('/dashboard/logout', 'Users::logout');
 $routes->get('/dashboard', 'Dashboard::index',['filter' => 'auth']);
-$routes->get('/AjoutServiceController', 'AjoutServiceController::index',['filter' => 'auth']);
+$routes->get('/ajoutservice', 'AjoutServiceController::index',['filter' => 'auth']);
+$routes->get('/dashboard/profile', 'Dashboard::profile');
 
 
 

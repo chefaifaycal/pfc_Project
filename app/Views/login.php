@@ -9,8 +9,8 @@
         <?php endif; ?>
     <form action="/" method="post" class="flex flex-col bg-gray-50 rounded-md items-center h-auto md:w-1/2 m-20 p-10 md:shadow-md">
   
-    <input type="email" name="email" id="email" placeholder="Adresse mail" class="form-control m-2 p-2 rounded-md rounded border-2 border-blue-400 focus:border-blue-500 shadow-md">
-    <input name="password" id="password" type="password" placeholder="Votre mot de passe" class="form-control m-2 p-2 rounded-md rounded border-2 border-blue-400 focus:border-blue-500 shadow-md">
+    <input type="email" name="email" id="email" placeholder="Adresse mail" class="form-control m-2 p-2 rounded-md border-2 border-blue-400 focus:border-blue-500 shadow-md">
+    <input name="password" id="password" type="password" placeholder="Votre mot de passe" class="form-control m-2 p-2 rounded-md border-2 border-blue-400 focus:border-blue-500 shadow-md">
       <?php if (isset($validation)): ?>
             <div class="col-12">
               <div class="alert alert-danger" role="alert">

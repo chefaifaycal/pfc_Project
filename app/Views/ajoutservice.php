@@ -1,48 +1,32 @@
-<div>
-    <form action="/AjoutServiceController" method="post">
+<?= $this->extend('layouts/html') ?>
+<?= $this->section('content')?>
+
+<div class="flex flex-col items-center bg-gray-50 md:bg-white ">
+  
+  <form action="/AjoutServiceController" method="post" class ="flex flex-col bg-gray-50 md:shadow-md reounded-md items-center h-auto w-1/2 p-3 px-10 m-10">
     <?= csrf_field() ?>
-        <div>
-            <label for="titre">Titre du service</label>
-           <input type="text"  name="titre" id="titre" >
-        </div>
-
-        <div>
-            <label for="description">Description</label>
-            <textarea name="description" id="description" placeholder="Description du service" cols="30" rows="10"></textarea>
-        </div>
-
-        <div>
-        <label for="categorie">Catégorie</label>
-               <select name="categorie" id="categorie">
-                    <option value="massonerie">Massonerie</option>  
-                    <option value="plomberie">Plomberie</option> 
-                    <option value="electricite">Electrivité</option>                 
-                    
-                </select>
-        </div>
-
-        <div>
-            <label for="tarif">Tarif</label>
-            <input type ="number" name="tarif" id="tarif" placeholder="Tarif du service"></input>
-        </div>
-
-        <div>
-            <label for="duree">Durée de delivration</label>
-            <input type ="number" name="duree" id="duree" placeholder="Durée en jours"></input>
-        </div>
-
-        <div>
-            <label for="dureevalidite">Durée de validité</label>
-            <input type ="number" name="dureevalidite" id="dureevalidite" placeholder="Durée en jours"></input>
-        </div>
-
-        <div>
-            <button><a href="#">Uploader des images</a></button>
-        </div>
-
-        <div>
-        <input type="submit" name="ajoutservice" value="ajoutservice" />
-        </div>
+    <input  name ="titre" type="text" placeholder="Titre du service" class="m-2 p-2 rounded-md  border-2 border-blue-400 focus:border-blue-500 shadow-md w-full ">
     
-    </form>
+    <textarea name="description" id="" cols="30" rows="10" placeholder="Description du service" class="m-2 p-2 rounded-md  border-2 border-blue-400 focus:border-blue-500 shadow-md  w-full"></textarea>
+    
+    <select name="categorie" id="" class="m-2 p-2 rounded-md  border-2 border-blue-400 focus:border-blue-500 shadow-md  w-full">
+      <option value="massonerie" >Massonerie</option>
+      <option value="elecricite">Electricité</option>
+      <option value="peinture">Peinture</option>
+    </select>
+    
+    <input name="tarif" type="text" placeholder="Tarif du service en DA" class="m-2 p-2 rounded-md  border-2 border-blue-400 focus:border-blue-500 shadow-md  w-full">
+    
+    <input name="duree" type="text" placeholder="Durée de delivration en Jours" class="m-2 p-2 rounded-md  border-2 border-blue-400 focus:border-blue-500 shadow-md  w-full">
+    
+    <input name="dureevalidite" type="text" placeholder="Durée de validité en Jours" class="m-2 p-2 rounded-md  border-2 border-blue-400 focus:border-blue-500 shadow-md  w-full">
+    
+    <button class="m-2 p-2 px-3 rounded-md shadow-md bg-blue-500 text-white hover:bg-blue-400  ">Uploder des images</button>
+    
+    <button name="ajoutservice" type="submit" class="rounded-md shadow-md bg-green-400 text-white m-2 p-2 px-3 hover:bg-green-300 font-semibold l">Ajouter le service </button>
+    
+  </form>
 </div>
+
+<?= $this->endSection() ?>
+

@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 use App\Models\Ajoutservice;
-use App\Model\UserModel;
+use App\Models\UserModel;
 
 class AjoutServiceController extends BaseController
 {
@@ -39,7 +39,7 @@ class AjoutServiceController extends BaseController
 			
             
 		}
-        echo view('ajoutservice');
+        return view('ajoutservice');
 
 
 
