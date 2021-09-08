@@ -3,9 +3,12 @@
 use CodeIgniter\Model;
 
 class MessagesModel extends Model{
-  protected $table = 'Messages';
+  protected $table = 'messages';
   protected $primaryKey = 'id';
-  protected $allowedFields = [ 'client_id','fournisseur_id','service_id','statut_commande']; 
+  protected $allowedFields = [ 'sender_id','receiver_id','msg_content','datetime','statut']; 
+
+  protected $useTimestamps = true;
+  
 
 
 }

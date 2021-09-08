@@ -5,7 +5,8 @@ use CodeIgniter\Model;
 class CommandeModel extends Model{
   protected $table = 'commande';
   protected $primaryKey = 'id';
-  protected $allowedFields = [ 'id','client_id','fournisseur_id','service_id','statut_commande']; 
+  protected $useTimestamps = true;
+  protected $allowedFields = [ 'id','client_id','fournisseur_id','service_id','statut_commande', 'date_commande']; 
 
 
  

@@ -27,15 +27,16 @@
         <div class="flex flex-col bg-gray-900 shadow-lg min-h-screen min-w-full text-white items-center">
             <div class="flex flex-col items-center py-5">
                 <img src="<?= session('profile_img')?>" alt="" class="h-40 w-40 object-center rounded-full mb-3 ">
+                
                 <span><?= session('firstname')?> <?= session('lastname')?> </span>
                 <span>@<?= session('username')?></span>
     
             </div>
   
-            <a href="#" class=" block p-3 hover:bg-gray-800 w-full ">Mon profile</a>
+            <a href="/profile" class=" block p-3 hover:bg-gray-800 w-full ">Mon profile</a>
             <a href="#" class="block p-3 hover:bg-gray-800 w-full ">Mes avis</a>
-            <a href="/Messages" class="block p-3 hover:bg-gray-800 w-full ">Mes Messages</a>
-            <a href="#" class="block p-3 hover:bg-gray-800 w-full ">Mes Commandes</a>
+            <a href="/Messages/main" class="block p-3 hover:bg-gray-800 w-full ">Mes Messages</a>
+            <a href="/Commandes" class="block p-3 hover:bg-gray-800 w-full ">Mes Commandes</a>
     
   
         </div>

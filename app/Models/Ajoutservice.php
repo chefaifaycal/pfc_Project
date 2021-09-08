@@ -23,7 +23,7 @@ class Ajoutservice extends Model
          $this->db =& $db;
     }
 
-    function where($id){
+    function where1($id){
         return $this->db->table('services')->where(['id_fournisseur' => $id])->get()->getResult();
     }
 

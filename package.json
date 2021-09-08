@@ -21,9 +21,9 @@
   },
   "homepage": "https://github.com/chefaifaycal/pfc_Project#readme",
   "devDependencies": {
-    "autoprefixer": "^10.2.5",
-    "postcss": "^8.2.13",
-    "tailwindcss": "^2.1.2"
+    "autoprefixer": "^10.3.1",
+    "postcss": "^8.3.6",
+    "tailwindcss": "^2.2.7"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",

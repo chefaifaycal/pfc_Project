@@ -7,6 +7,14 @@ class Dashboard extends BaseController
 {
 	public function index()
 	{
+		$db      = \Config\Database::connect();
+		$builder = $db->table('services');
+		
+		//Affichage du nombre de services
+		$builder->selectCount('id_service','nbr')->where('id_fournisseur', session('userid'));
+		$nbr_services = $builder->get()->getResultArray();
+
+
 		$id = session('userid');
 		$model = new UserModel();
 		$model1 = new MetierModel();
@@ -30,9 +38,11 @@ class Dashboard extends BaseController
 				'daira' => $user['daira'],
 				'commune' => $user['commune'],
 				'codepostale' => $user['code_postal'],
+				'nbr_services' =>$nbr_services,
 			];
 		}
-
+		
+	
 		return view('dashboardView', $data);
 		
 

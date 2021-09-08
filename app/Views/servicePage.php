@@ -72,8 +72,8 @@
    <div class="flex flex-col bg-gray-200 w-2/5 h-screen shadow-md m-3 p-5 rounded-md ">
         <div class="flex flex-col items-center">
             <a href="/Services/commander/<?= $serviceid ?>"><button class="rounded-md shadow-md text-white font-semibold bg-blue-500 m-2 p-3" >Commander</button></a>
-            
-            <a class="rounded-md shadow-md text-white font-semibold bg-green-500 m-2 p-3" href="/Messages/new/<?= $fournisseurData['id'] ?>">Contacter le fournisseur</a>
+            <?php $data = ['fournisseur_id' => $fournisseurData['id'] ]; session()->set($data); ?>
+            <a class="rounded-md shadow-md text-white font-semibold bg-green-500 m-2 p-3" href="/Messages/index/<?= $fournisseurData['id'] ?>">Contacter le fournisseur</a>
         </div>
 
         <div class="flex flex-col items-center w-full">

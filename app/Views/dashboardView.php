@@ -14,6 +14,7 @@
     <a href="/Services" class=" block p-3 hover:bg-gray-800 w-full ">Mes services</a>
     <a href="#" class="block p-3 hover:bg-gray-800 w-full ">Mes commandes</a>
     <a href="#" class="block p-3 hover:bg-gray-800 w-full ">Mes avis</a>
+    <a href="/Messages/main" class="block p-3 hover:bg-gray-800 w-full ">Mes Messages</a>
     
   
   </div>
@@ -46,7 +47,7 @@
     <div class="flex justify-center m-5 space-x-5">
       <div class=" flex flex-col items-center rounded-md bg-blue-500 shadow-md w-48 h-48 font-semibold text-white p-3 ">
         <h2>Nombre de services actif</h2>
-        <h1 class="text-7xl">3</h1>
+        <h1 class="text-7xl"><?= $nbr_services[0]['nbr'] ?></h1>
       </div>
 
       <div class=" flex flex-col items-center rounded-md bg-blue-500 shadow-md w-48 h-48 font-semibold text-white p-3 ">

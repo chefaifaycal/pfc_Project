@@ -34,11 +34,17 @@ class Services extends BaseController
 		
 		 $db = db_connect();
 		 $model = new Ajoutservice($db);
-		 $result = $model->where(session('userid'));
+		 $result = $model->where1(session('userid'));
 		$data['results']	= $result;	
 
+		
 
+		$services_id = $model->select('id_service')->where('id_fournisseur', session('userid'))->get()->getResultArray();
+		print_r($services_id);
 
+		$db      = \Config\Database::connect();
+		$builder = $db->table('images');
+		
         return view('services',$data);
 
 
@@ -321,13 +327,6 @@ class Services extends BaseController
 		$db = db_connect();
 		$model = new Ajoutservice($db);		
 		
-		
-		
-		
-			
-
-		
-
 		$data = [
 			'client_id' => session('userid'),
 			'fournisseur_id' => $model->find($id)['id_fournisseur'],

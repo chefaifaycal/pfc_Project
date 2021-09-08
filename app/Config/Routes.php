@@ -39,34 +39,46 @@ $routes->match(['get','post'],'client', 'Users::client',['filter' => 'noauth']);
 $routes->get('/dashboard/logout', 'Users::logout');
 $routes->get('/dashboard', 'Dashboard::index',['filter' => 'auth']);
 $routes->get('/ajoutservice', 'Services::ajout',['filter' => 'auth']);
-$routes->get('/dashboard/profile', 'Dashboard::profile');
-$routes->get('/services/ajout', 'Services::ajout');
-$routes->get('/preregistration', 'Users::preregister');
+$routes->get('/dashboard/profile', 'Dashboard::profile',['filter' => 'auth']);
+$routes->get('/preregistration', 'Users::preregister',['filter' => 'noauth']);
+$routes->get('/Commandes', 'Commandes::index',['filter' => 'auth']);
+$routes->get('/Avis', 'Avis::index',['filter' => 'auth']);
+$routes->get('/dashboard/client', 'Dashboard::client',['filter' => 'auth']);
 
-$routes->get('/admin/users', 'Examples::customers_management');
-$routes->get('/admin/users/(:any)', 'Examples::customers_management/$1');
-$routes->post('/admin/users/(:any)', 'Examples::customers_management/$1');
 
-$routes->get('/admin/services', 'Examples::services_management');
-$routes->get('/admin/services/(:any)', 'Examples::services_management/$1');
-$routes->post('/admin/services/(:any)', 'Examples::services_management/$1');
+$routes->get('/admin/users', 'Examples::customers_management',['filter' => 'auth']);
+$routes->get('/admin/users/(:any)', 'Examples::customers_management/$1',['filter' => 'auth']);
+$routes->post('/admin/users/(:any)', 'Examples::customers_management/$1',['filter' => 'auth']);
 
-$routes->get('/admin/images', 'Examples::images_management');
-$routes->get('/admin/images/(:any)', 'Examples::images_management/$1');
-$routes->post('/admin/images/(:any)', 'Examples::images_management/$1');
+$routes->get('/admin/services', 'Examples::services_management',['filter' => 'auth']);
+$routes->get('/admin/services/(:any)', 'Examples::services_management/$1',['filter' => 'auth']);
+$routes->post('/admin/services/(:any)', 'Examples::services_management/$1',['filter' => 'auth']);
 
-$routes->get('/admin/avis', 'Examples::avis_management');
-$routes->get('/admin/avis/(:any)', 'Examples::avis_management/$1');
-$routes->post('/admin/avis/(:any)', 'Examples::avis_management/$1');
+$routes->get('/admin/images', 'Examples::images_management',['filter' => 'auth']);
+$routes->get('/admin/images/(:any)', 'Examples::images_management/$1',['filter' => 'auth']);
+$routes->post('/admin/images/(:any)', 'Examples::images_management/$1',['filter' => 'auth']);
 
-$routes->get('/admin/categories', 'Examples::categories_management');
-$routes->get('/admin/categories/(:any)', 'Examples::categories_management/$1');
-$routes->post('/admin/categories/(:any)', 'Examples::categories_management/$1');
+$routes->get('/admin/avis', 'Examples::avis_management',['filter' => 'auth']);
+$routes->get('/admin/avis/(:any)', 'Examples::avis_management/$1',['filter' => 'auth']);
+$routes->post('/admin/avis/(:any)', 'Examples::avis_management/$1',['filter' => 'auth']);
+
+$routes->get('/admin/categories', 'Examples::categories_management',['filter' => 'auth']);
+$routes->get('/admin/categories/(:any)', 'Examples::categories_management/$1',['filter' => 'auth']);
+$routes->post('/admin/categories/(:any)', 'Examples::categories_management/$1',['filter' => 'auth']);
 
 /* Chat Filters */
 $routes->get('chat', 'Chat::index',['filter' => 'auth']);
 
+//Routes with Filters for Messages Controller
+$routes->get('/Messages/main', 'Messages::main',['filter' => 'auth']);
+$routes->get('/Messages', 'Messages::index',['filter' => 'auth']);
+$routes->get('/Messages/envoyer', 'Messages::main',['filter' => 'auth']);
 
+//Routes with Filters for Services Controller
+$routes->get('/Services', 'Services::index',['filter' => 'auth']);
+$routes->get('/services/ajout', 'Services::ajout',['filter' => 'auth']);
+$routes->get('/services/recherche', 'Services::recherche',['filter' => 'auth']);
+$routes->get('/services/consulter', 'Services::consulter',['filter' => 'auth']);
 
 /*
  * --------------------------------------------------------------------
